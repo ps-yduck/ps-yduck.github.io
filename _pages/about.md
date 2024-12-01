@@ -23,9 +23,9 @@ Put your address / P.O. box / other info right below your picture. You can also 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
 I am a full-time research associate at the Lahore University of Management Sciences (LUMS), working under the supervision of Dr. Zafar Ayyub Qazi, Dr. Ihsan Ayyub Qazi, and Dr. Agha Ali Raza. My research focuses on Systems and Networking, particularly in Distributed Systems, Mobile Operating Systems, and Networked Systems. I have contributed to the development of federated learning frameworks like FLOWER and have worked on the scalable deployment of large language model (LLM) applications, including integrating vector databases for semantic search. Leading the Actualaiz edtech project, I have developed LLM-based tools for graduate school counseling and exam creation, benefiting students and educators alike. Additionally, I have served as a Teaching Assistant for Distributed Systems and Artificial Intelligence, supporting over 160 students and reinforcing my expertise through advanced graduate coursework. My dedication to advancing systems research and developing practical applications underscores my commitment to contributing meaningfully to the field.
-
+<!-- 
 <div class="publications">
 
 {% bibliography %}
 
-</div>
+</div> -->

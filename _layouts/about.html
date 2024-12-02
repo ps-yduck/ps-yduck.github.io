@@ -1,0 +1,262 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title" style="color: #9370DB;">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold" style="color: #9370DB;" >{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1
+      rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- News -->
+    {% if false %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if site.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    
+
+
+    <h2 style="color: #9370DB; font-weight: bold;">Research Experience</h2>
+    <div class="news"></div>
+      
+        <div
+          class="table-responsive"
+         
+        >
+          <table class="table table-sm table-borderless table-dark">
+            
+              <tr>
+                <th scope="row" style="width: 20%">{{ "2024-06-01" | date: "%b, %Y" }} - Present</th>
+                <td>
+                  <span class="news-title"><strong>Full-time Research Associate</strong> - Distributed and AI Systems Lab, LUMS</span>
+             
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row" style="width: 20%">{{ "2023-01-01" | date: "%b, %Y" }} - {{ "2024-05-01" | date: "%b, %Y" }}</th>
+                <td>
+                  <span class="news-title"><strong>Undergraduate Research Assistant</strong> - Distributed and AI Systems Lab, LUMS</span>
+             
+                </td>
+              </tr>
+         
+          </table>
+        </div>
+    
+     
+    </div>
+
+
+    <h2 style="color: #9370DB; font-weight: bold;">Research Projects</h2>
+    <div class="research-experience">
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless">
+          <!-- Research Associate -->
+          <tr>
+            <th scope="row" style="width: 30%; padding: 20px; text-align: center; ">
+              <img src="assets/img/art.webp" alt="Research Associate Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;  ">
+            </th>
+            <td>
+              <span><strong>ActualAIz</strong> [{{ "2024-06-01" | date: "%b, %Y" }} – Present]</span>
+              <br>
+              <i>Advisors: Dr. Zafar Ayyub Qazi, Dr. Ihsan Ayyub Qazi, and Dr. Agha Ali Raza</i>
+              <ul>
+                <li>
+                 Developed an LLM-powered text editor and chatbot to provide graduate application counseling for students.
+                  
+                </li>
+               
+                <li>Implemented prompt engineering techniques, such as chain-of-thought and few-shot prompting, for LLM agents to produce reusable templates for generating exam questions.</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr></tr>
+            <th scope="row" style="width: 20%; padding: 20px; text-align: center; ">
+              <img src="assets/img/FEDL.avif" alt="Research Associate Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;  ">
+            </th>
+            <td>
+              <span><strong>Federated Learning</strong> [{{ "2023-01-01" | date: "%b, %Y" }} – {{ "2024-05-01" | date: "%b, %Y" }}]</span>
+              <br>
+              <i>Advisors: Dr. Zafar Ayyub Qazi, and Dr. Ihsan Ayyub Qazi</i>
+              <ul>
+                <li>
+                  Conducted a measurement study to analyze the impact of Federated Learning (FL) on user experience and Android memory management performance in resource-constrained devices.
+                </li>
+                <li>Modified Swappiness and Kswapd reclamation behavior to target unreferenced FL pages and anonymous pages,
+improving user experience (UE) and Kernel Memory Management performance.</li>
+              </ul>
+            </td>
+          </tr>
+    
+         
+        </table>
+      </div>
+    </div>
+
+    <h2 style="color: #9370DB; font-weight: bold;">Academic Awards</h2>
+    <div class="news"></div>
+      
+        <div
+          class="table-responsive"
+         
+        >
+          <table class="table table-sm table-borderless table-dark">
+            
+              <tr>
+                <th scope="row" style="width: 20%">2020 - 2024</th>
+                <td>
+                  <span class="news-title">Placed on Dean's Honor List for all the four years of undergraduate</span>
+             
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row" style="width: 20%">2021</th>
+                <td>
+                  <span class="news-title">Received Merit Scholarship Award for academic performnce.</span>
+             
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row" style="width: 20%">2024</th>
+                <td>
+                  <span class="news-title">Graduated with High Distinction Award</span>
+             
+                </td>
+              </tr>
+         
+          </table>
+        </div>
+    
+     
+    </div>
+
+    <div class="container">
+      <h2 style="color: #9370DB; font-weight: bold;">Teaching Experience</h2>
+      <div class="news"></div>
+        
+          <div
+            class="table-responsive"
+          
+          >
+            <table class="table table-sm table-borderless table-dark">
+              
+                <tr>
+                  <th scope="row" style="width: 20%">{{ "2023-09-01" | date: "%b, %Y" }} - {{ "2023-12-01" | date: "%b, %Y" }}</th>
+                  <td>
+                    <span class="news-title">CS582: Distributed Systems (Teaching Assistant)</span>
+              
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row" style="width: 20%">{{ "2023-01-01" | date: "%b, %Y" }} - {{ "2023-05-01" | date: "%b, %Y" }}</th>
+                  <td>
+                    <span class="news-title">CS331: Introduction to Artificial Intelligence (Teaching Assistant)</span>
+              
+                  </td>
+                </tr>
+
+                <tr></tr>
+                  <th scope="row" style="width: 20%">{{ "2022-09-01" | date: "%b, %Y" }} - {{ "2023-12-01" | date: "%b, %Y" }}</th>
+                  <td>
+                    <span class="news-title">CS100: Computational Problem Solving (Teaching Assistant)</span>
+              
+                  </td>
+                </tr>
+          
+            </table>
+          </div>
+      
+      
+      </div>
+
+      
+    </div>
+    <div class="container">
+      <h2 style="color: #9370DB; font-weight: bold;">Misc</h2>
+        <div class="news"></div>
+          <ul>
+            <li><span>I enjoy watching Mixed Martial Arts</span> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94a.png" height="20" width="20"> </li>
+            <li><span>I have a passion for photography</span> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f7.png" height="20" width="20"> <span>.Here are some photos I took:</span>
+              <br>
+              <br>
+               <img  src="assets/img/IMG_7564.jpg" alt="Photography"style="width: 150px; height: 150px; border-radius: 10%; object-fit: cover; margin-left: 10px; padding:4px;">
+           
+               <img  src="assets/img/IMG_7570.jpg" alt="Photography"style="width: 150px; height: 150px; border-radius: 10%; object-fit: cover; margin-left: 10px; padding:4px;">
+            </li>
+
+          </ul>
+           
+         
+           
+        </div>
+    </div>
+
+    
+  
+  </article>
+</div>

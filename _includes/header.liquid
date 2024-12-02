@@ -49,11 +49,20 @@
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
+              About
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
+          </li>
+
+
+
+          <li class="nav-item"></li>
+                <a class="nav-link" href="{{ 'assets/pdf/Resume_MuhammadHamzaKhawaja.pdf' | relative_url }}" target="_blank">CV
+                  <span class="sr-only">(current)</span>
+                  
+                </a>
           </li>
 
           <!-- Other pages -->
